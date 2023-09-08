@@ -9,20 +9,20 @@ const NavBar = () => {
         <Link to='/'>
             <h1 className='text-2xl'>CriptoWeb</h1>
         </Link>
-        <div>
+        <div className='hidden md:block'>
           <CambiarTema />
         </div>
-        <div>
-          <Link to='/acceder'> Acceder </Link>
-          <Link to='/regístrate'> Regístrate </Link>
+        <div className='hidden md:block'>
+          <Link to='/acceder' className='p-4 hover:text-accent'> Acceder </Link>
+          <Link to='/regístrate' className='bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'> Regístrate </Link>
         </div>
         { /* Menu Icon */}
-        <div>
+        <div className='block md:hidden cursor-pointer z-10'>
           <AiOutlineMenu />
         </div>
 
         { /* Menu Celular*/}
-<div>
+<div className='md:hidden fixed left-0 top-20 flex flex-col items-center justify-between w-full h-[90%] bg-primary ease-in duration-300 z-10'>
   <ul>
     <li>
       <Link to='/'>Inicio</Link>
