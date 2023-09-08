@@ -7,6 +7,9 @@ const NavBar = () => {
         <Link to='/'>
             <h1>CriptoWeb</h1>
         </Link>
+        <div>
+          
+        </div>
     </div>
   )
 }
