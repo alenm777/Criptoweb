@@ -1,8 +1,11 @@
 import React from 'react'
+import BuscadorMoneda from '../components/BuscadorMoneda'
 
-const Inicio = () => {
+const Inicio = ({coins}) => {
   return (
-    <div>Inicio</div>
+    <div>
+      <BuscadorMoneda coins={coins} />
+    </div>
   )
 }
 
