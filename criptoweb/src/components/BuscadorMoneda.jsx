@@ -21,7 +21,7 @@ const BuscadorMoneda = ({coins}) => {
                 <th>Precio</th>
                 <th>24 hs</th>
                 <th>24 hs Volumen</th>
-                <th>Mkt</th>
+                <th>Capital de Mercado</th>
                 <th>últimos 7 días</th>
             </tr>
         </thead>
@@ -32,15 +32,16 @@ const BuscadorMoneda = ({coins}) => {
                     <td>{coin.market_cap_rank}</td>
                     <td>
                         <div>
-                            <img src='' alt='' />
+                            <img src={coin.image} alt={coin.id} />
+                            <p>{coin.name}</p>
                         </div>
                         </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{coin.symbol}</td>
+                    <td>{coin.current_price}</td>
+                    <td>{coin.price_change_percentage_24h}</td>
+                    <td>{coin.total_volume}</td>
+                    <td>{coin.market_cap}</td>
+                    <td>{coin.sparkline_in_7d.price}</td>
                 </tr>
              ))}
         </tbody>
