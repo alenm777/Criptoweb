@@ -26,10 +26,10 @@ const BuscadorMoneda = ({coins}) => {
             </tr>
         </thead>
         <tbody>
-             {coins.map(() => (
+             {coins.map((coin) => (
                 <tr>
                     <td><AiOutlineStar /></td>
-                    <td></td>
+                    <td>{coin.market_cap_rank}</td>
                     <td></td>
                     <td></td>
                     <td></td>
