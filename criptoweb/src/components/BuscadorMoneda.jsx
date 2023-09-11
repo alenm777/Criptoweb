@@ -30,7 +30,11 @@ const BuscadorMoneda = ({coins}) => {
                 <tr>
                     <td><AiOutlineStar /></td>
                     <td>{coin.market_cap_rank}</td>
-                    <td></td>
+                    <td>
+                        <div>
+                            <img src='' alt='' />
+                        </div>
+                        </td>
                     <td></td>
                     <td></td>
                     <td></td>
