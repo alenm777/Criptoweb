@@ -6,6 +6,7 @@ import Inicio from './routes/Inicio'
 import Acceder from './routes/Acceder'
 import Inscribirse  from './routes/Inscribirse'
 import Cuenta from './routes/Cuenta'
+import CoinPage from './routes/CoinPage'
 import axios from 'axios'
 
 function App() {
@@ -29,6 +30,9 @@ useEffect(() => {
     <Route path='/acceder' element={<Acceder />} />
     <Route path='/inscribirse' element={<Inscribirse />} />
     <Route path='/cuenta' element={<Cuenta/>} />
+    <Route path='/coin/:coinId' element={<CoinPage />}>
+      <Route path=':coinId' />
+    </Route>
    </Routes>
     </TemaProvider>
   )
