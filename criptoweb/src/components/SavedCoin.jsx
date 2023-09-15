@@ -8,34 +8,34 @@ const [coins, setCoins ] = useState([])
   return (
     <div>
       {coins.length === 0 ? ( <p>
-        No tienes ninguna moneda guardada. Guarda una moneda para añadirla a tu lista. 
+        No tienes ninguna moneda guardada. Guarda una moneda para añadirla a tu lista.  
         <Link to='/'>Pulse aquí para buscar monedas
         </Link>
         </p> ) : (
-            <table>
+            <table className='w-full border-collapse text-center'>
                 <thead>
-                    <tr>
-                    <th>Posición #</th>
-                    <th>Moneda</th>
-                    <th>Eliminar</th>
+                    <tr className='border-b'>
+                    <th className='px-4'>Posición #</th>
+                    <th className='text-left'>Moneda</th>
+                    <th className='text-left'>Eliminar</th>
                     </tr>
                 </thead>
 <tbody>
     {coins.map((coin) => (
-        <tr key={coin.id}>
+        <tr key={coin.id} className='h-[60px] overflow-hidden'>
             <td>{coin?.rank}</td>
             <td>
                 <Link to={`/coin/${coin.id}`}>
-                    <div>
-                        <img src={coin?.image} alt="/" />
+                    <div className='flex items-center'>
+                        <img src={coin?.image} className='w-8 mr-4' alt="/" />
                         <div>
-                            <p>{coin?.name}</p>
-                            <p>{coin?.symbol.toUpperCase()}</p>
+                            <p className='hidden sm:table-cell'>{coin?.name}</p>
+                            <p className='text-gray-500 text-left text-sm'>{coin?.symbol.toUpperCase()}</p>
                         </div>
                     </div>
                 </Link>
             </td>
-            <td>
+            <td className='pl-8 '>
                 <AiOutlineClose className='cursor-pointer' />
             </td>
         </tr>

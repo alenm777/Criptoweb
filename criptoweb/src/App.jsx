@@ -9,6 +9,8 @@ import Cuenta from './routes/Cuenta'
 import CoinPage from './routes/CoinPage'
 import axios from 'axios'
 import Footer from './components/Footer'
+import { AuthContextProvider } from './Context/AuthContext'
+
 
 function App() {
 const [coins, setCoins] = useState([])
@@ -25,6 +27,7 @@ useEffect(() => {
 
   return (
     <TemaProvider>
+    <AuthContextProvider>
    <NavBar />
    <Routes>
     <Route path='/' element={<Inicio coins={coins} />} />
@@ -36,6 +39,7 @@ useEffect(() => {
     </Route>
    </Routes>
    <Footer />
+   </AuthContextProvider>
     </TemaProvider>
   )
 }
