@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CambiarTema from './CambiarTema';
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai';
+import { UserAuth } from '../Context/AuthContext';
 
 const NavBar = () => {
 const [nav, setNav] = useState(false)
+const {user, logout} = UserAuth()
+const navigate = useNavigate();
 
 const handleNav = () => {
   setNav(!nav);
+}
+
+const handleSignOut = async () => {
+  try {
+await logout()
+navigate('/')
+  } catch (e) {
+    console.log(e.message)
+  }
 }
 
   return (
@@ -18,10 +30,17 @@ const handleNav = () => {
         <div className='hidden md:block'>
           <CambiarTema />
         </div>
-        <div className='hidden md:block'>
-          <Link to='/acceder' className='p-4 hover:text-accent'> Iniciar sesión</Link>
-          <Link to='/inscribirse' className='bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'> Regístrarse </Link>
+      {user?.email ? (
+        <div>
+          <Link to='/cuenta' className='p-4'>Perfil</Link>
+          <button onClick={handleSignOut}>Cerrar sesión</button>
         </div>
+      ) : (
+        <div className='hidden md:block'>
+        <Link to='/acceder' className='p-4 hover:text-accent'> Iniciar sesión</Link>
+        <Link to='/inscribirse' className='bg-button text-btnText px-5 py-2 ml-2 rounded-2xl shadow-lg hover:shadow-2xl'> Regístrarse </Link>
+      </div>
+      )}
         { /* Menu Icon */}
         <div onClick={handleNav} className='block md:hidden cursor-pointer z-10'>
           {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />} 
