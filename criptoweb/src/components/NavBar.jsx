@@ -26,7 +26,7 @@ navigate('/')
     <div className='rounded-div flex items-center justify-between h-20 font-bold'>
         <Link to='/'>
         <button className='text-2xl bg-transparent border-none cursor-pointer'>
-      <img src='src/image/html1.png' alt='Logo' className='w-20 h-18 mr-2' />
+      <img src='/assets/html1-a81be232.png' alt='Logo' className='w-20 h-18 mr-2' />
     </button>
         </Link>
         <div className='hidden md:block'>
