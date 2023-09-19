@@ -25,7 +25,9 @@ navigate('/')
   return (
     <div className='rounded-div flex items-center justify-between h-20 font-bold'>
         <Link to='/'>
-            <h1 className='text-2xl'>CriptoWeb</h1>
+        <button className='text-2xl bg-transparent border-none cursor-pointer'>
+      <img src='src/image/html1.png' alt='Logo' className='w-20 h-18 mr-2' />
+    </button>
         </Link>
         <div className='hidden md:block'>
           <CambiarTema />
@@ -52,11 +54,11 @@ navigate('/')
 : 'fixed left-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in duration-300 ' }
 >
   <ul className='w-full p-4'>
-    <li className='border-b py-6 '>
+    <li onClick={handleNav} className='border-b py-6 '>
       <Link to='/'>Inicio</Link>
     </li>
-    <li className='border-b py-6 '>
-      <Link to='/'>Cuenta</Link>
+    <li onClick={handleNav} className='border-b py-6 '>
+      <Link to='/cuenta'>Cuenta</Link>
     </li>
 <li className=' py-6 '>
   <CambiarTema />
@@ -64,10 +66,10 @@ navigate('/')
   </ul>
   <div className='flex flex-col w-full p-4'>
     <Link to='/acceder'>
-      <button className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'>Acceder</button>
+      <button onClick={handleNav} className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'>Acceder</button>
     </Link>
     <Link to='/regístrate'>
-      <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Regístrate</button>
+      <button onClick={handleNav} className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Regístrate</button>
     </Link>
   </div>
 </div>

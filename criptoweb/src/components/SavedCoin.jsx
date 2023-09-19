@@ -10,12 +10,12 @@ const [coins, setCoins ] = useState([]);
 const { user } = UserAuth()
 
 useEffect(() => {
-onSnapshot(doc(db, 'users', `${user.email}`), (doc) => {
+onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
     setCoins(doc.data()?.watchList)
 })
 }, [user.email])
 
-const coinPath = doc(db, 'users', `${user.email}`)
+const coinPath = doc(db, 'users', `${user?.email}`)
 const deleteCoin = async (passedid) => {
     try {
         const result = coins.filter((item) => item.id !== passedid)
